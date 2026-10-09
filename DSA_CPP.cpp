@@ -1,0 +1,122 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Node
+{
+    int id;
+    string name;
+    Node* next;
+};
+
+Node* head = NULL;
+Node* current = NULL;
+
+// Add student
+void addStudent()
+{
+    Node* n = new Node;
+
+    cout << "Enter Student ID: ";
+    cin >> n->id;
+
+    cout << "Enter Student Name: ";
+    cin >> ws;
+    getline(cin, n->name);
+
+    if (head == NULL)
+    {
+        head = n;
+        n->next = head;
+        current = head;
+    }
+    else
+    {
+        Node* temp = head;
+
+        while (temp->next != head)
+            temp = temp->next;
+
+        temp->next = n;
+        n->next = head;
+    }
+
+    cout << "Student added successfully!\n";
+}
+
+// Display students
+void display()
+{
+    if (head == NULL)
+    {
+        cout << "No students available!\n";
+        return;
+    }
+
+    Node* temp = head;
+
+    do
+    {
+        cout << "ID: " << temp->id
+             << " | Name: " << temp->name << endl;
+
+        temp = temp->next;
+
+    } while (temp != head);
+}
+
+// Rotate sports captain
+void rotate()
+{
+    if (current == NULL)
+    {
+        cout << "No students available!\n";
+        return;
+    }
+
+    current = current->next;
+
+    cout << "Current Sports Captain: "
+         << current->name << endl;
+}
+
+int main()
+{
+    int choice;
+
+    do
+    {
+        cout << "\n--- CLASS SPORTS ROTATION SYSTEM ---\n";
+        cout << "1. Add Student\n";
+        cout << "2. Display Students\n";
+        cout << "3. Rotate Captain\n";
+        cout << "4. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                addStudent();
+                break;
+
+            case 2:
+                display();
+                break;
+
+            case 3:
+                rotate();
+                break;
+
+            case 4:
+                cout << "Thank you!\n";
+                break;
+
+            default:
+                cout << "Invalid choice!\n";
+        }
+
+    } while (choice != 4);
+
+    return 0;
+}

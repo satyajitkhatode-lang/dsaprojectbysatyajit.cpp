@@ -21,4 +21,5 @@ The program must:
 - Confirm that inorder traversal is strictly sorted.
 - Validate that node heights and balance factors are mathematically correct.
 
-## Problem Statement 4:Develop a C++ program that represents a hotel and tourist attractions as vertices in a graph. Roads are edges with non-negative distances. Apply Dijkstra’s algorithm from the hotel, display the shortest distance to every attraction, and list reachable attractions in increasing order of distance.
+## Problem Statement 4:Develop a C++ program that represents a hotel and tourist attractions as vertices in a graph.
+Roads are edges with non-negative distances. Apply Dijkstra’s algorithm from the hotel, display the shortest distance to every attraction, and list reachable attractions in increasing order of distance.
